@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Gamespring!@3232323
+      MYSQL_DATABASE: gamespring
+      MYSQL_USER: user
+      MYSQL_PASSWORD: Gamespring!@3232323
+      TZ: Asia/Seoul
+      MYSQL_ROOT_HOST: "%" # 외부 접속 허용
+    ports:
+      - "3307:3306"
+    command:
+      - --character-set-server=utf8mb4 # 한글깨짐 방지
+      - --collation-server=utf8mb4_unicode_ci # 한글깨짐 방지
+
